@@ -6,13 +6,55 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/main_Create_Manager"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:text="관리자 아이디 생성"
+        android:textColor="#000000"
+        app:autoSizeTextType="uniform"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/main_Manager"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintVertical_bias="1.0"
+        app:layout_constraintHeight_percent="0.1"
+        app:layout_constraintWidth_percent="0.9"/>
 
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:id="@+id/main_Manager"
+        app:layout_constraintBottom_toTopOf="@id/main_Part_Time_Job"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintVertical_bias="1.0"
+        app:layout_constraintHeight_percent="0.1"
+        app:layout_constraintWidth_percent="0.9"
+        android:gravity="center"
+        app:autoSizeTextType="uniform"
+        android:text="관리자 로그인"
+        android:textColor="#000000"
+        />
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:id="@+id/main_Part_Time_Job"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintVertical_bias="1.0"
+        app:layout_constraintHeight_percent="0.1"
+        app:layout_constraintWidth_percent="0.9"
+        android:gravity="center"
+        app:autoSizeTextType="uniform"
+        android:text="알바생 로그인"
+        android:textColor="#000000"
+        />
 </androidx.constraintlayout.widget.ConstraintLayout>
