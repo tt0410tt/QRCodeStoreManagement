@@ -1,5 +1,5 @@
 
-package com.main.qrcodestoremanagement;
+package com.main.stutyGroupManagement;
 
 import androidx.appcompat.app.AppCompatActivity;
 

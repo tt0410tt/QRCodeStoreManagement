@@ -1,4 +1,4 @@
-package com.main.qrcodestoremanagement;
+package com.main.stutyGroupManagement;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Intent intent;
         switch (v.getId()) {
             case R.id.main_Create_Manager:
-                intent=new Intent(this,activity_Create_Manager.class);
+                intent=new Intent(this, activity_Main.class);
                 startActivity(intent);
         }
     }

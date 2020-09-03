@@ -1,4 +1,4 @@
-package com.main.qrcodestoremanagement;
+package com.main.stutyGroupManagement;
 
 import org.junit.Test;
 
