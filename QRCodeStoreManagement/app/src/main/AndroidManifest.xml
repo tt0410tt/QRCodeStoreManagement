@@ -9,16 +9,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.main.stutyGroupManagement.activity_Main"></activity>
-        <activity android:name="com.main.stutyGroupManagement.activity_Splash" >
+        <activity android:name=".fragment_Main_Talk"></activity>
+        <activity android:name=".Fragment_Main_Study" />
+        <activity android:name=".fragment_Main_Notice_Board" />
+        <activity android:name=".activity_Main" />
+        <activity android:name=".activity_Splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.main.stutyGroupManagement.MainActivity">
-        </activity>
+        <activity android:name=".MainActivity" />
     </application>
 
 </manifest>
