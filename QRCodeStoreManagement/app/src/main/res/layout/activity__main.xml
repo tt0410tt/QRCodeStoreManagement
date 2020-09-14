@@ -25,6 +25,7 @@
         android:layout_height="0dp"
         android:gravity="center"
         android:background="#551100"
+        app:tabBackground="@drawable/activity_main_category_selector"
         android:text="아이디 중복 확인"
         app:layout_constraintTop_toBottomOf="@+id/main_tob_layout"
         app:layout_constraintBottom_toBottomOf="parent"
