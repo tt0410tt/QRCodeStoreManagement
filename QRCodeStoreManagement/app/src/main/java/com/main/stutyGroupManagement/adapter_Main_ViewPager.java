@@ -15,12 +15,11 @@ public class adapter_Main_ViewPager extends FragmentPagerAdapter {
     ArrayList<String> fragmentList=new ArrayList<>();
     public adapter_Main_ViewPager(FragmentManager fm) {
         super(fm);
-        fragmentList.add(fragment_Main_Notice_Board.class.getName());
-        fragmentList.add(fragment_Main_Study.class.getName());
-        fragmentList.add(fragment_Main_Talk.class.getName());
-        fragmentList.add(fragment_Main_ETC.class.getName());
     }
 
+    public void addArrayList(String arrayListName){
+        fragmentList.add(arrayListName);
+    }
 
     @NonNull
     @Override
@@ -33,6 +32,8 @@ public class adapter_Main_ViewPager extends FragmentPagerAdapter {
             case 2:
                 return fragment_Main_Talk.newInstance();
             case 3:
+                return fragment_Main_Temp.newInstance();
+            case 4:
                 return fragment_Main_ETC.newInstance();
             default:
                 return null;

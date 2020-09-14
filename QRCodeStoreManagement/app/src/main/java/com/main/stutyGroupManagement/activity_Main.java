@@ -12,7 +12,7 @@ public class activity_Main extends AppCompatActivity {
 
     ViewPager main_ViewPager;
     TabLayout main_TabLayout;
-    private FragmentPagerAdapter fragmentPagerAdapter;
+    private adapter_Main_ViewPager fragmentPagerAdapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,17 +20,18 @@ public class activity_Main extends AppCompatActivity {
         main_ViewPager=findViewById(R.id.main_view_pager);
         main_TabLayout=findViewById(R.id.main_tab);
 
-        main_TabLayout.addTab(main_TabLayout.newTab().setText("게시판"));
-        main_TabLayout.addTab(main_TabLayout.newTab().setText("공부"));
-        main_TabLayout.addTab(main_TabLayout.newTab().setText("카톡"));
-        main_TabLayout.addTab(main_TabLayout.newTab().setText("더보기"));
         fragmentPagerAdapter = new adapter_Main_ViewPager(getSupportFragmentManager());
+        addTab("게시판");
+        addTab("공부");
+        addTab("카톡");
+        addTab("개인");
+        addTab("더보기");
 
         main_ViewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(main_TabLayout));
         main_TabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
-                main_ViewPager.setCurrentItem( tab.getPosition());
+                main_ViewPager.setCurrentItem(tab.getPosition());
             }
 
             @Override
@@ -43,6 +44,11 @@ public class activity_Main extends AppCompatActivity {
         });
 
         main_ViewPager.setAdapter(fragmentPagerAdapter);
+    }
+
+    private void addTab(String tabName){
+        main_TabLayout.addTab(main_TabLayout.newTab().setText(tabName));
+        fragmentPagerAdapter.addArrayList(tabName);
     }
 }
 
