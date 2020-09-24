@@ -9,7 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".fragment_Main_Talk"></activity>
+        <activity android:name=".Main_screen" />
+        <activity android:name=".custom_tab" />
+        <activity android:name=".Mainscreen" />
+        <activity android:name=".login" />
+        <activity android:name=".fragment_Main_Talk" />
         <activity android:name=".Fragment_Main_Study" />
         <activity android:name=".fragment_Main_Notice_Board" />
         <activity android:name=".activity_Main" />

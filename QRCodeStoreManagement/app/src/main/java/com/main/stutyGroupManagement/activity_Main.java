@@ -44,6 +44,7 @@ public class activity_Main extends AppCompatActivity {
         });
 
         main_ViewPager.setAdapter(fragmentPagerAdapter);
+
     }
 
     private void addTab(String tabName){

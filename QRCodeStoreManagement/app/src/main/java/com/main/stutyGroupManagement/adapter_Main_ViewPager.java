@@ -28,11 +28,11 @@ public class adapter_Main_ViewPager extends FragmentPagerAdapter {
             case 0:
                 return fragment_Main_Notice_Board.newInstance();
             case 1:
-                return fragment_Main_Study.newInstance();
+                return main_my_group.newInstance();
             case 2:
                 return fragment_Main_Talk.newInstance();
             case 3:
-                return fragment_Main_Temp.newInstance();
+                return fragment_Main_Study.newInstance();
             case 4:
                 return fragment_Main_ETC.newInstance();
             default:

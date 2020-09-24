@@ -1,29 +1,23 @@
 package com.main.stutyGroupManagement;
 
-import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.content.Intent;
-import android.graphics.drawable.ShapeDrawable;
-import android.graphics.drawable.shapes.OvalShape;
-import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
-import android.widget.ImageView;
-import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+public class login extends AppCompatActivity implements View.OnClickListener {
 
-    ConstraintLayout button_login;
-    ImageView logo;
-    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
+    ConstraintLayout button_kakao_login;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_login);
 
         //상하단바 제거
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);//화면 항상켜짐
@@ -43,11 +37,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         getWindow().getDecorView().setSystemUiVisibility(newUiOptions);
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN);
 
-        button_login = (ConstraintLayout) findViewById(R.id.button_login);
-        button_login.setOnClickListener(this);
-        logo=findViewById(R.id.main_Logo);
-
-
+        button_kakao_login=(ConstraintLayout)findViewById(R.id.button_kakao_login);
+        button_kakao_login.setOnClickListener(this);
 
     }
 
@@ -55,9 +46,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         Intent intent;
         switch (v.getId()) {
-            case R.id.button_login:
-                intent=new Intent(this, login.class);
+            case R.id.button_kakao_login:
+                intent=new Intent(this, Main_screen.class);
                 startActivity(intent);
         }
     }
+
 }
