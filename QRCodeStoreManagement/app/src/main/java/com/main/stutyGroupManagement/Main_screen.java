@@ -7,6 +7,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -29,6 +30,7 @@ public class Main_screen extends AppCompatActivity {
             R.drawable.selector_study_board,
             R.drawable.selector_study_board
     };
+    Drawable ic_yellow_circle;
 
 
     @Override
@@ -36,7 +38,7 @@ public class Main_screen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_screen);
 
-
+        ic_yellow_circle =getResources().getDrawable(R.drawable.ic_yellow_circle);
         viewPager = (ViewPager) findViewById(R.id.main_view_pager);
         setupViewPager(viewPager);
 
@@ -47,44 +49,87 @@ public class Main_screen extends AppCompatActivity {
 
     private void setupTabIcons() {
 
-        TextView tab1 = (TextView) LayoutInflater.from(this).inflate(R.layout.activity_custom_tab, null);
-        tab1.setText("스터디 게시판");
-        tab1.setCompoundDrawablesWithIntrinsicBounds(0, R.drawable.ic_yellow_circle,0, 0);
-        tabLayout.getTabAt(0).setCustomView(tab1);
+        View view1 = getLayoutInflater().inflate(R.layout.activity_custom_tab, null);
+        ImageView img1 = view1.findViewById(R.id.img_tab);
+        TextView txt1 = view1.findViewById(R.id.tab);
+        img1.setImageResource(R.drawable.ic_baseline_people_alt_24);
+        txt1.setText("스터디 게시판");
+        /*tab1.setCompoundDrawablesWithIntrinsicBounds(0, R.drawable.ic_yellow_circle,0, 0);*/
 
-        TextView tab2 = (TextView) LayoutInflater.from(this).inflate(R.layout.activity_custom_tab, null);
+        View view2 = getLayoutInflater().inflate(R.layout.activity_custom_tab, null);
+        ImageView img2 = view2.findViewById(R.id.img_tab);
+        TextView txt2 = view2.findViewById(R.id.tab);
+        img2.setImageResource(R.drawable.ic_baseline_people_alt_24);
+        txt2.setText("마이 그룹");
+        /*tab1.setCompoundDrawablesWithIntrinsicBounds(0, R.drawable.ic_yellow_circle,0, 0);*/
+
+        View view3 = getLayoutInflater().inflate(R.layout.activity_custom_tab, null);
+        ImageView img3 = view3.findViewById(R.id.img_tab);
+        TextView txt3= view3.findViewById(R.id.tab);
+        img3.setImageResource(R.drawable.ic_baseline_people_alt_24);
+        txt3.setText("채팅");
+        /*tab1.setCompoundDrawablesWithIntrinsicBounds(0, R.drawable.ic_yellow_circle,0, 0);*/
+
+        View view4 = getLayoutInflater().inflate(R.layout.activity_custom_tab, null);
+        ImageView img4 = view4.findViewById(R.id.img_tab);
+        TextView txt4 = view4.findViewById(R.id.tab);
+        img4.setImageResource(R.drawable.ic_baseline_people_alt_24);
+        txt4.setText("마이 스터디");
+        /*tab1.setCompoundDrawablesWithIntrinsicBounds(0, R.drawable.ic_yellow_circle,0, 0);*/
+
+
+        View view5 = getLayoutInflater().inflate(R.layout.activity_custom_tab, null);
+        ImageView img5 = view5.findViewById(R.id.img_tab);
+        TextView txt5 = view5.findViewById(R.id.tab);
+        img5.setImageResource(R.drawable.ic_baseline_people_alt_24);
+        txt5.setText("더보기");
+        /*tab1.setCompoundDrawablesWithIntrinsicBounds(0, R.drawable.ic_yellow_circle,0, 0);*/
+        tabLayout.getTabAt(0).setCustomView(view1);
+        tabLayout.getTabAt(1).setCustomView(view2);
+        tabLayout.getTabAt(2).setCustomView(view3);
+        tabLayout.getTabAt(3).setCustomView(view4);
+        tabLayout.getTabAt(4).setCustomView(view5);
+
+       /* TextView tab2 = (TextView) LayoutInflater.from(this).inflate(R.layout.activity_custom_tab, null);
         tab2.setText("마이 그룹");
-        tab2.setCompoundDrawablesWithIntrinsicBounds(0, R.drawable.ic_android_black_24dp, 0, 0);
+        ImageView img2 = (ImageView) LayoutInflater.from(this).inflate(R.layout.activity_custom_tab, null);
+        img2.setImageResource(R.drawable.ic_baseline_people_alt_24);
+        *//*tab2.setCompoundDrawablesWithIntrinsicBounds(0, R.drawable.ic_baseline_people_alt_24, 0, 0);*//*
         tabLayout.getTabAt(1).setCustomView(tab2);
 
         TextView tab3 = (TextView) LayoutInflater.from(this).inflate(R.layout.activity_custom_tab, null);
         tab3.setText("채팅");
-        tab3.setCompoundDrawablesWithIntrinsicBounds(0, R.drawable.ic_android_black_24dp, 0, 0);
+        ImageView img3 = (ImageView) LayoutInflater.from(this).inflate(R.layout.activity_custom_tab, null);
+        img3.setImageResource(R.drawable.ic_baseline_people_alt_24);
+       *//* tab3.setCompoundDrawablesWithIntrinsicBounds(0, R.drawable.ic_android_black_24dp, 0, 0);*//*
         tabLayout.getTabAt(2).setCustomView(tab3);
 
+        ImageView img4 = (ImageView) LayoutInflater.from(this).inflate(R.layout.activity_custom_tab, null);
+        img4.setImageResource(R.drawable.ic_baseline_people_alt_24);
         TextView tab4 = (TextView) LayoutInflater.from(this).inflate(R.layout.activity_custom_tab, null);
         tab4.setText("마이 스터디");
-        tab4.setCompoundDrawablesWithIntrinsicBounds(0, R.drawable.ic_android_black_24dp, 0, 0);
+       *//* tab4.setCompoundDrawablesWithIntrinsicBounds(0, R.drawable.ic_android_black_24dp, 0, 0);*//*
         tabLayout.getTabAt(3).setCustomView(tab4);
 
+        ImageView img5 = (ImageView) LayoutInflater.from(this).inflate(R.layout.activity_custom_tab, null);
+        img5.setImageResource(R.drawable.ic_baseline_people_alt_24);
         TextView tab5 = (TextView) LayoutInflater.from(this).inflate(R.layout.activity_custom_tab, null);
         tab5.setText("더보기");
-        tab5.setCompoundDrawablesWithIntrinsicBounds(0, R.drawable.ic_android_black_24dp, 0, 0);
-        tabLayout.getTabAt(4).setCustomView(tab5);
+       *//* tab5.setCompoundDrawablesWithIntrinsicBounds(0, R.drawable.ic_android_black_24dp, 0, 0);*//*
+        tabLayout.getTabAt(4).setCustomView(tab5);*/
     }
 
     private void setupViewPager(ViewPager viewPager) {
-        ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
-        adapter.addFrag(new fragment_Main_Notice_Board(), "스터디 게시판");
-        adapter.addFrag(new main_my_group(), "마이 그룹");
-        adapter.addFrag(new fragment_Main_Talk(), "채팅");
-        adapter.addFrag(new fragment_Main_Study(), "마이 스터디");
-        adapter.addFrag(new fragment_Main_ETC(), "더보기");
-
+        adapter_Main_ViewPager adapter = new adapter_Main_ViewPager(getSupportFragmentManager());
+        adapter.addFragment(new fragment_Main_Notice_Board(), "스터디 게시판");
+        adapter.addFragment(new main_my_group(), "마이 그룹");
+        adapter.addFragment(new fragment_Main_Talk(), "채팅");
+        adapter.addFragment(new fragment_Main_Study(), "마이 스터디");
+        adapter.addFragment(new fragment_Main_ETC(), "더보기");
         viewPager.setAdapter(adapter);
     }
 
-    class ViewPagerAdapter extends FragmentPagerAdapter {
+   /* class ViewPagerAdapter extends FragmentPagerAdapter {
         private final List<Fragment> mFragmentList = new ArrayList<>();
         private final List<String> mFragmentTitleList = new ArrayList<>();
 
@@ -111,7 +156,7 @@ public class Main_screen extends AppCompatActivity {
         public CharSequence getPageTitle(int position) {
             return mFragmentTitleList.get(position);
         }
-    }
+    }*/
         /*main_ViewPager=findViewById(R.id.main_view_pager);
         main_TabLayout=findViewById(R.id.main_tab);
 
