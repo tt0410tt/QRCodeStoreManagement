@@ -32,7 +32,8 @@
             android:layout_height="match_parent"
             app:tabIndicatorHeight="0dp"
             app:tabGravity="fill"
-            app:tabMode="fixed" />
+            app:tabMode="fixed"
+            />
     </com.google.android.material.appbar.AppBarLayout>
 
     <androidx.viewpager.widget.ViewPager

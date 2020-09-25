@@ -81,7 +81,7 @@ public class Main_screen extends AppCompatActivity {
         View view5 = getLayoutInflater().inflate(R.layout.activity_custom_tab, null);
         ImageView img5 = view5.findViewById(R.id.img_tab);
         TextView txt5 = view5.findViewById(R.id.tab);
-        img5.setImageResource(R.drawable.ic_baseline_people_alt_24);
+        img5.setImageResource(R.drawable.selector_etc);
         txt5.setText("더보기");
         /*tab1.setCompoundDrawablesWithIntrinsicBounds(0, R.drawable.ic_yellow_circle,0, 0);*/
         tabLayout.getTabAt(0).setCustomView(view1);
