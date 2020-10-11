@@ -1,0 +1,17 @@
+<ripple xmlns:android="http://schemas.android.com/apk/res/android"
+    android:color="@color/colorWhite">
+    <item>
+        <shape>
+            <stroke
+                android:width="2dp"
+                android:color="#F15A24"/>
+            <corners android:radius="999dp"/> <!-- 모서리 기울기 -->
+            <solid  android:color="#F15A24"/><!-- 배경색 -->
+            <padding
+                android:bottom="3dp"
+                android:left="3dp"
+                android:right="3dp"
+                android:top="3dp" />
+        </shape>
+    </item>
+</ripple>
