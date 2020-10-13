@@ -71,84 +71,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(intent);
 
             case R.id.test:
-                InsertData getData = new InsertData();
-                getData.execute();
+                //서버 커뮤니케이션 클래스 기본구조
+                sever_Communication severCommunication = new sever_Communication();
+                severCommunication.setSetURL("deletedatabase.php");//서버주소
+                severCommunication.createData("dataBaseName","testtsst","android","key");//데이터생성 "키워드" "키값" 순
+                severCommunication.setSetMessage("아무거나 주세요");//백그라운드 띄울 메세지
+                severCommunication.setContext(this);
+                severCommunication.execute();
         }
     }
-    class InsertData extends AsyncTask<String, Void, String> {
 
-        ProgressDialog logindialog = new ProgressDialog(MainActivity.this);
-
-        @Override
-        protected void onPreExecute() {
-            logindialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
-            logindialog.setMessage("사업자 정보를 확인중입니다...");
-            logindialog.show();
-            super.onPreExecute();
-        }
-
-
-        @Override
-        protected void onPostExecute(String result) {
-            logindialog.dismiss();
-            super.onPostExecute(result);
-            Log.d(TAG, "Data Post - App : " + result);
-        }
-
-
-        @Override
-        protected String doInBackground(String... params) {
-
-
-            String serverURL="http://ec2-54-180-81-106.ap-northeast-2.compute.amazonaws.com/getdatatest.php";
-            try {
-
-                URL url = new URL(serverURL);//주소입력
-                HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
-
-
-                httpURLConnection.setReadTimeout(5000);//5초내 무 응답시 예외처리
-                httpURLConnection.setConnectTimeout(5000);//5초내 연결 불가시 예외처리
-                httpURLConnection.setRequestMethod("POST");//post방식 요청
-                httpURLConnection.connect();
-
-
-
-                int responseStatusCode = httpURLConnection.getResponseCode();//응답
-                Log.d(TAG, "POST response code - " + responseStatusCode);
-
-                InputStream inputStream;
-                if(responseStatusCode == HttpURLConnection.HTTP_OK) {//정상응답
-                    inputStream = httpURLConnection.getInputStream();
-                }
-                else{
-                    inputStream = httpURLConnection.getErrorStream();//에러
-                }
-
-
-                InputStreamReader inputStreamReader = new InputStreamReader(inputStream, "UTF-8");//수신값 저장
-                BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
-
-                StringBuilder sb = new StringBuilder();
-                String line = null;
-
-                while((line = bufferedReader.readLine()) != null){
-                    sb.append(line);
-                }
-
-                Log.d(TAG, "doInBackground: "+sb.toString());
-                bufferedReader.close();
-
-                return sb.toString();
-
-
-            } catch (Exception e) {
-
-                Log.d(TAG, "InsertData: Error ", e);
-
-                return new String("Error: " + e.getMessage());
-            }
-
-        }
-    }
 }
